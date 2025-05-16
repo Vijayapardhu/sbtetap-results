@@ -1,0 +1,23 @@
+{
+  "name": "apsbtet-playwright",
+  "version": "1.0.0",
+  "main": "fetchStudentInfo.js",
+  "scripts": {
+    "start": "node newserver.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "clipboardy": "^4.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "playwright": "^1.52.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.18"
+  }
+}

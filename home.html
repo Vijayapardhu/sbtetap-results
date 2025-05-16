@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diploma Results</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Diploma Results</h1>
+    <label for="pin">Enter PIN:</label>
+    <input type="text" id="pin" placeholder="Enter PIN">
+    <button id="fetchResults">Fetch Results</button>
+
+    <div class="results">
+      <h2>Student Details</h2>
+      <p><strong>PIN:</strong> <span id="studentPin"></span></p>
+      <p><strong>Photo:</strong></p>
+      <img id="studentPhoto" alt="Student Photo" style="max-width: 150px; max-height: 150px;">
+      <p><strong>Name:</strong> <span id="studentName"></span></p>
+      <p><strong>Branch:</strong> <span id="studentBranch"></span></p>
+
+      <h2>Results</h2>
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Paper</th>
+            <th>External</th>
+            <th>Internal</th>
+            <th>Total Marks</th>
+            <th>Grade Points</th>
+            <th>Credits</th>
+            <th>Grade</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="summary">
+        <h3>Summary</h3>
+        <p><strong>Grand Total:</strong> <span id="grandTotal"></span></p>
+        <p><strong>GPA:</strong> <span id="gpa"></span></p>
+        <p><strong>Result:</strong> <span id="resultStatus"></span></p>
+        <p><strong>Month & Year:</strong> <span id="monthYear">Mar/April 2025</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('fetchResults').addEventListener('click', async () => {
+      const pin = document.getElementById('pin').value;
+      if (!pin) {
+        alert('Please enter a PIN');
+        return;
+      }
+
+      const response = await fetch('http://localhost:3000/fetch-student-info', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pin }),
+      });
+
+      const data = await response.json();
+      const Pin23 = pin.toUpperCase();
+
+      // Populate student details
+      document.getElementById('studentPin').textContent = Pin23;
+      document.getElementById('studentName').textContent = data.name;
+      document.getElementById('studentBranch').textContent = data.branch;
+     if (data.photoBase64) {
+     document.getElementById('studentPhoto').src = `data:image/jpg;base64,${data.photoBase64}`;
+     } else {
+     document.getElementById('studentPhoto').alt = 'Photo not available';
+    }
+      // Populate results table (merge unit and session results)
+      const resultsTable = document.getElementById('resultsTable').querySelector('tbody');
+      resultsTable.innerHTML = '';
+
+      // Combine unit and session results
+      const allResults = [...data.unitResults, ...data.sessionResults];
+      allResults.forEach(result => {
+        const row = `<tr>
+          <td>${result.subjectCode}</td>
+          <td>${result.externalMarks}</td>
+          <td>${result.internalMarks}</td>
+          <td>${result.totalMarks}</td>
+          <td>${result.gradePoints}</td>
+          <td>${result.credits}</td>
+          <td>${result.grade}</td>
+          <td>${result.status}</td>
+        </tr>`;
+        resultsTable.innerHTML += row;
+      });
+
+      // Calculate Grand Total
+      const grandTotal = data.totals.GrandTotal;
+      document.getElementById('grandTotal').textContent = grandTotal;
+
+      // Calculate GPA
+      const totalGradePoints = allResults.reduce((sum, result) => sum + (result.gradePoints * result.credits), 0);
+      const totalCredits = allResults.reduce((sum, result) => sum + result.credits, 0);
+      const gpa = (totalGradePoints / totalCredits).toFixed(2);
+      document.getElementById('gpa').textContent = gpa;
+
+      // Determine Result Status
+      const isPass = allResults.every(result => result.status === 'P');
+      document.getElementById('resultStatus').textContent = isPass ? 'Pass' : 'Fail';
+    });
+  </script>
+</body>
+</html>

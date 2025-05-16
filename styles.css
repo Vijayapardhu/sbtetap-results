@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.marksheet {
+  width: 794px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #E6E8FF;
+  border: 1px solid #3D46A5;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #3D46A5;
+  padding: 8px;
+  text-align: center;
+}
+
+.header {
+  background-color: #C1D2E2;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+.value {
+  background-color: #e3e8f5;
+  text-align: left;
+}
+
+.table-head th {
+  background-color: #d3dcf3;
+}
+
+.photo-cell {
+  background-color: #e3e8f5;
+  text-align: center;
+}
+
+.photo {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid #444;
+}
