@@ -8,7 +8,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "clipboardy": "^4.0.0",
     "cors": "^2.8.5",
@@ -19,5 +18,17 @@
   "devDependencies": {
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.18"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vijayapardhu/sbtetap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vijayapardhu/sbtetap/issues"
+  },
+  "homepage": "https://github.com/Vijayapardhu/sbtetap#readme",
+  "description": ""
 }
