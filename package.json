@@ -108,7 +108,12 @@
     "@types/node": "^22.15.21"
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "node newserver.js"
+=======
+    "start": "node newserver.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> 706221a652546f726e447286656cee1aeed6a804
   },
   "repository": {
     "type": "git",
