@@ -7,18 +7,18 @@
     {
       "subjectCode": 401,
       "internalMarks": 9,
-      "externalMarks": 26,
-      "totalMarks": 35,
-      "gradePoints": 0,
+      "externalMarks": 30,
+      "totalMarks": 39,
+      "gradePoints": 5,
       "credits": 2.5,
-      "grade": "F",
-      "status": "F"
+      "grade": "D",
+      "status": "P"
     },
     {
       "subjectCode": 402,
       "internalMarks": 18,
-      "externalMarks": 57,
-      "totalMarks": 75,
+      "externalMarks": 61,
+      "totalMarks": 79,
       "gradePoints": 8,
       "credits": 2.5,
       "grade": "B+",
@@ -27,8 +27,8 @@
     {
       "subjectCode": 403,
       "internalMarks": 18,
-      "externalMarks": 62,
-      "totalMarks": 80,
+      "externalMarks": 66,
+      "totalMarks": 84,
       "gradePoints": 9,
       "credits": 2.5,
       "grade": "A",
@@ -37,8 +37,8 @@
     {
       "subjectCode": 404,
       "internalMarks": 17,
-      "externalMarks": 64,
-      "totalMarks": 81,
+      "externalMarks": 68,
+      "totalMarks": 85,
       "gradePoints": 9,
       "credits": 2.5,
       "grade": "A",
@@ -47,11 +47,11 @@
     {
       "subjectCode": 405,
       "internalMarks": 17,
-      "externalMarks": 69,
-      "totalMarks": 86,
-      "gradePoints": 9,
+      "externalMarks": 73,
+      "totalMarks": 90,
+      "gradePoints": 10,
       "credits": 2.5,
-      "grade": "A",
+      "grade": "A+",
       "status": "P"
     }
   ],
@@ -99,9 +99,9 @@
   ],
   "totals": {
     "totalInternalUnit": 79,
-    "totalExternalUnit": 278,
+    "totalExternalUnit": 298,
     "totalInternalSession": 144,
     "totalExternalSession": 240,
-    "GrandTotal": 741
+    "GrandTotal": 761
   }
 }

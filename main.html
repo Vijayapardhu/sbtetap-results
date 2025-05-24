@@ -567,7 +567,7 @@ select {
       return;
     }
 
-    const response = await fetch('https://sbtetap.onrender.com/fetch-student-info', {
+    const response = await fetch('/fetch-student-info', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ pin }),

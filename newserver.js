@@ -7,8 +7,6 @@ const fs = require('fs');
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-// Serve the home.html file for the root route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'main.html'));
 });
@@ -30,11 +28,8 @@ const calculateExternalMarksForSubject = (internal, pin, subjectCode, isSessiona
   let externalMarks;
 
   switch (subjectCode) {
-    case '401':
-      externalMarks = Math.round(subjectMultiplier * internal + 1 + randomAdjustment);
-      break;
     case '402':
-      externalMarks = Math.round(subjectMultiplier * internal + 4 + randomAdjustment);
+      externalMarks = Math.round(subjectMultiplier * internal + 5 + randomAdjustment);
       break;
     case '403':
       externalMarks = Math.round(subjectMultiplier * internal + 13 + randomAdjustment);
@@ -46,7 +41,7 @@ const calculateExternalMarksForSubject = (internal, pin, subjectCode, isSessiona
       externalMarks = Math.round(subjectMultiplier * internal + 5 + randomAdjustment);
       break;
     default:
-      externalMarks = Math.round(subjectMultiplier * internal + 6 + randomAdjustment);
+      externalMarks = Math.round(subjectMultiplier * internal + 10 + randomAdjustment);
       break;
   }
 
@@ -117,7 +112,7 @@ const calculateGradeDetails = (totalMarks) => {
   } else if (totalMarks >= 50) {
     gradePoints = 6;
     grade = 'C';
-  } else if (totalMarks >= 40) {
+  } else if (totalMarks >= 28) {
     gradePoints = 5;
     grade = 'D';
   } else {
@@ -125,7 +120,7 @@ const calculateGradeDetails = (totalMarks) => {
     grade = 'F';
   }
 
-  status = totalMarks >= 40 ? 'P' : 'F';
+  status = totalMarks >= 28 ? 'P' : 'F';
 
   return { gradePoints, grade, status };
 };
