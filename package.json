@@ -107,14 +107,9 @@
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.21"
   },
-  "scripts": {
-<<<<<<< HEAD
-    "start": "node newserver.js"
-=======
-    "start": "node newserver.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> 706221a652546f726e447286656cee1aeed6a804
-  },
+ "scripts": {
+  "start": "node newserver.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vijayapardhu/sbtetap.git"
