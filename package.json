@@ -113,14 +113,14 @@
 },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vijayapardhu/sbtetap.git"
+    "url": "git+https://github.com/Vijayapardhu/sbtetap-results.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vijayapardhu/sbtetap/issues"
+    "url": "https://github.com/Vijayapardhu/sbtetap-results/issues"
   },
-  "homepage": "https://github.com/Vijayapardhu/sbtetap#readme",
+  "homepage": "https://github.com/Vijayapardhu/sbtetap-results#readme",
   "keywords": [],
   "description": ""
 }
