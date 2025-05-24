@@ -3,9 +3,8 @@ services:
     name: sbtetap-results
     env: node
     buildCommand: |
-      npm install
-      npx playwright install
-    startCommand: npm start
+      npm install && npx playwright install
+    startCommand: node newserver.js
     plan: free
     envVars:
       - key: NODE_ENV
