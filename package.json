@@ -107,9 +107,10 @@
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.15.21"
   },
- "scripts": {
-  "start": "node newserver.js"
-},
+"scripts": {
+    "start": "node newserver.js",
+    "postinstall": "npx playwright install --with-deps"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vijayapardhu/sbtetap.git"
