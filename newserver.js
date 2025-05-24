@@ -126,7 +126,7 @@ const calculateGradeDetails = (totalMarks) => {
 };
 
 // Endpoint to fetch student info
-app.post('/fetch-student-info', async (req, res) => {
+app.post('/info', async (req, res) => {
   const { pin } = req.body;
 
   const browser = await chromium.launch({ headless: true });

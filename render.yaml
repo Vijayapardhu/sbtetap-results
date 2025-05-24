@@ -2,7 +2,9 @@ services:
   - type: web
     name: sbtetap-results
     env: node
-    buildCommand: npm install
+    buildCommand: |
+      npm install
+      npx playwright install --with-deps
     startCommand: npm start
     plan: free
     envVars:
